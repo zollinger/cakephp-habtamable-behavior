@@ -54,7 +54,7 @@
  private function checkHabtmConditions($Model, $query) {
   $searchableConditions = implode('.', Set::flatten(array_keys($query['conditions'])));
   
-  return (bool) strpos($searchableConditions, $this->settings[$Model->alias]['habtmModel']); 
+  return (strpos($searchableConditions, $this->settings[$Model->alias]['habtmModel']) !== FALSE) ; 
  }
  
 /**  
